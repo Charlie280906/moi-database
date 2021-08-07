@@ -1,0 +1,208 @@
+:root {
+  --background: #000000;
+  --text: #25ff10;
+  --good: #0000ff;
+  --bad: #ff0000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+h1 {
+  font-family: "Andale Mono", AndaleMono, monospace;
+  font-size: 50px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 26.4px;
+}
+
+h3 {
+  font-family: "Andale Mono", AndaleMono, monospace;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 15.4px;
+}
+
+p {
+  font-family: "Andale Mono", AndaleMono, monospace;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 2 rem;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-family: "Andale Mono", AndaleMono, monospace;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+form input {
+  width: 40%;
+}
+
+form button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  color: var(--background);
+  background: var(--text);
+  border-radius: 10%;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 50%;
+  list-style: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.todo li {
+  flex: 1;
+  font-family: "Andale Mono", AndaleMono, monospace;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.bin-btn {
+  color: var(--bad);
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  background: transparent;
+}
+
+.bin-btn:hover {
+  background: var(--bad);
+  color: var(--background);
+  transition: all 0.3s ease;
+  border-radius: 10%;
+  padding: 0.5rem;
+}
+
+.complete-btn {
+  color: var(--good);
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  background: transparent;
+}
+
+.complete-btn:hover {
+  background: var(--good);
+  color: var(--background);
+  transition: all 0.3s ease;
+  border-radius: 10%;
+  padding: 0.5rem;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0;
+}
+
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+select {
+  color: var(--text);
+  width: 10rem;
+  cursor: pointer;
+  background: none;
+  font-family: "Andale Mono", AndaleMono, monospace;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 0.5rem;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+  border-radius: 10%;
+  padding: 0.5rem;
+}
+
+.select:hover::after {
+  background: var(--text);
+  color: var(--background);
+  transition: all 0.3s ease;
+}
+
+.todo.gone {
+  display: none;
+}
